@@ -3,7 +3,7 @@ package com.example.tasks.solutions.zalando;
 import java.util.Arrays;
 import java.util.List;
 
-public class Solutions {
+public class RemoveLettersFromString {
 
     public static String solution(String input) {
 
