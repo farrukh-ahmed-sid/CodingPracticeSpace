@@ -6,9 +6,19 @@ import java.util.*;
 
 public class ShortestReachInGraph {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void shortestReachInGraph() {
+        Scanner scanner = null;
 
-        Scanner scanner = new Scanner(new File("/Users/frahmed/Desktop/input2.txt"));
+        try {
+            scanner = new Scanner(new File("/Users/frahmed/Desktop/input2.txt"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        if (Objects.isNull(scanner)) {
+            System.out.println("Please provide input: ");
+            scanner = new Scanner(System.in);
+        }
+
         String inputLine;
         final int EDGE_COST = 6;
         final String SEPARATOR = " ";
@@ -86,7 +96,8 @@ public class ShortestReachInGraph {
         }
         scanner.close();
     }
-    private static void pathBetweenNodes(Map<Integer, Set<Integer>> pathToNextNodes, int key, int value){
+
+    private static void pathBetweenNodes(Map<Integer, Set<Integer>> pathToNextNodes, int key, int value) {
         Set<Integer> values;
 
         if (Objects.isNull(pathToNextNodes.get(key))) {

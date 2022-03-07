@@ -1,9 +1,7 @@
 package com.example.tasks.solutions;
 
 
-import java.util.*;
-
-import static com.example.tasks.solutions.zalando.GuardAndAssassin.guardAndAssassin;
+import static com.example.tasks.solutions.amazon.hackerrank.ShortestReachInGraph.shortestReachInGraph;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +14,7 @@ public class Main {
                 {"_", "_", "_", "_", "_", "_"},
                 {"_", "_", "b", "_", "^", "_"},
         };
-
+        shortestReachInGraph();
         //System.out.println(guardAndAssassin(arr));
     }
 }
