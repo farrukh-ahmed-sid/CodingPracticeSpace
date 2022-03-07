@@ -10,7 +10,7 @@ public class ShortestReachInGraph {
         Scanner scanner = null;
 
         try {
-            scanner = new Scanner(new File("/Users/frahmed/Desktop/input2.txt"));
+            scanner = new Scanner(new File("/Users/frahmed/Desktop/ShortestReachInGraphInput.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

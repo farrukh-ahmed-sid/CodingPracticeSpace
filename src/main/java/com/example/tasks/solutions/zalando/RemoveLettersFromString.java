@@ -8,13 +8,13 @@ public class RemoveLettersFromString {
     public static String solution(String input) {
 
         int size = input.length();
-        List<String> list = Arrays.asList("AB", "BA", "CD", "DC");
+        List<String> lettersToBeRemove = Arrays.asList("AB", "BA", "CD", "DC");
 
         for (int i = 0; i < size - 1; i++) {
 
-            for (String s : list) {
-                if (input.contains(s)) {
-                    input = removeString(input, s);
+            for (String l : lettersToBeRemove) {
+                if (input.contains(l)) {
+                    input = removeString(input, l);
                 }
             }
         }
