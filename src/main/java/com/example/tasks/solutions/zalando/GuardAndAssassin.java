@@ -1,4 +1,4 @@
-package com.example.tasks.solutions.graphs;
+package com.example.tasks.solutions.zalando;
 
 import java.util.ArrayList;
 import java.util.List;
