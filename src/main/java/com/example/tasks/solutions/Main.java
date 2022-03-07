@@ -1,24 +1,13 @@
 package com.example.tasks.solutions;
 
 
-import static com.example.tasks.solutions.amazon.hackerrank.ShortestReachInGraph.shortestReachInGraph;
+import static com.example.tasks.solutions.amazon.hackerrank.HeightOfBinaryTree.height;
+import static com.example.tasks.solutions.amazon.hackerrank.HeightOfBinaryTree.initialize;
 
 public class Main {
     public static void main(String[] args) {
 
-        shortestReachInGraph();
-        //System.out.println(guardAndAssassin(guardAndAssassinInput()));
-    }
-
-    private static String[][] guardAndAssassinInput() {
-        return new String[][]{
-                {"_", "_", "_", "_", "_", "_"},
-                {"_", "A", "b", "_", "_", "_"},
-                {"_", "_", "b", ">", "_", "_"},
-                {"_", "_", "_", "b", "_", "_"},
-                {"_", "_", "_", "_", "_", "_"},
-                {"_", "_", "b", "_", "^", "_"},
-        };
+        System.out.println(height(initialize()));
     }
 
 }

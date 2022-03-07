@@ -11,6 +11,20 @@ public class GuardAndAssassin {
     static final String PATH = "_";
     static final String ASSASSIN = "a";
 
+
+    public static String[][] initialize() {
+
+        return new String[][]{
+                {"_", "_", "_", "_", "_", "_"},
+                {"_", "A", "b", "_", "_", "_"},
+                {"_", "_", "b", ">", "_", "_"},
+                {"_", "_", "_", "b", "_", "_"},
+                {"_", "_", "_", "_", "_", "_"},
+                {"_", "_", "b", "_", "^", "_"},
+        };
+
+    }
+
     public static boolean guardAndAssassin(String[][] box) {
         int rowSize = box.length;
         int colSize = box[0].length;
