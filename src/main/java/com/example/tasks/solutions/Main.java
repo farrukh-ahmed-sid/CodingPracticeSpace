@@ -1,13 +1,23 @@
 package com.example.tasks.solutions;
 
 
-import static com.example.tasks.solutions.amazon.hackerrank.HeightOfBinaryTree.height;
-import static com.example.tasks.solutions.amazon.hackerrank.HeightOfBinaryTree.initialize;
+import com.example.tasks.solutions.amazon.hackerrank.trie.ContactAddAndFind;
+
+import static com.example.tasks.solutions.amazon.hackerrank.trie.ContactAddAndFind.initialize;
 
 public class Main {
-    public static void main(String[] args) {
 
-        System.out.println(height(initialize()));
+    public static int age = 0;
+    String name = "";
+    public static void print(){
+        System.out.println("HI STatic");
+    }
+
+    public static void main(String[] args) {
+        ContactAddAndFind contactAddAndFind = new ContactAddAndFind();
+        System.out.println(contactAddAndFind.contacts(initialize()));
     }
 
 }
+
+
