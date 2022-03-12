@@ -1,4 +1,4 @@
-package com.example.tasks.solutions.zalando;
+package com.example.tasks.solutions.codility.zalando;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.tasks.solutions.amazon.hackerrank;
+package com.example.tasks.solutions.hackerrank;
 
 import java.io.File;
 import java.io.FileNotFoundException;
