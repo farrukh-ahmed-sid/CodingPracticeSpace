@@ -1,0 +1,30 @@
+package com.example.tasks.solutions.codility.zalando;
+
+public class ChangeDigitDivideByThree {
+
+    public static void findCount(String number) {
+
+        int sum = 0;
+
+        for (int i = 0; i < number.length(); ++i) {
+            sum += number.charAt(i) - 48;
+        }
+
+        int count = 0;
+
+        for (int i = 0; i < number.length(); ++i) {
+
+            int remaining_sum
+                    = sum - (number.charAt(i) - 48);
+            if ((remaining_sum) % 3 == 0) {
+                count += 4;
+            } else {
+                count += 3;
+            }
+        }
+        if (sum % 3 == 0) {
+            count = count - number.length() + 1;
+        }
+        System.out.println(count);
+    }
+}
