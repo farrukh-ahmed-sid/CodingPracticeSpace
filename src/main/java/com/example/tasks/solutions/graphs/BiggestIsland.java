@@ -1,10 +1,23 @@
 package com.example.tasks.solutions.graphs;
 
-public class MinimumIsland {
+public class BiggestIsland {
 
     static int count = 0;
 
-    public static int minimumIsland(String[][] box) {
+    public static String[][] initialize() {
+
+        return new String[][]{
+                {"W", "W", "W", "W", "W", "W"},
+                {"W", "L", "b", "W", "W", "W"},
+                {"W", "L", "L", "W", "W", "W"},
+                {"W", "W", "W", "W", "W", "W"},
+                {"W", "W", "W", "W", "W", "W"},
+                {"W", "W", "b", "W", "L", "L"},
+        };
+
+    }
+    
+    public static int biggestIsland(String[][] box) {
 
         int val = 0;
 

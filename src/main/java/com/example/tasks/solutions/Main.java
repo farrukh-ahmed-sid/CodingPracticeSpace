@@ -1,18 +1,15 @@
 package com.example.tasks.solutions;
 
 
-import static com.example.tasks.solutions.codility.alten.NumbersInCircle.numberOfEvenSumsOfValuesInCircle;
+import static com.example.tasks.solutions.graphs.BiggestIsland.initialize;
+import static com.example.tasks.solutions.graphs.BiggestIsland.biggestIsland;
 
 public class Main {
 
     public static void main(String[] args) {
-        int[] arr = {4, 2, 5, 8, 7, 3, 7};
-
-        System.out.println(numberOfEvenSumsOfValuesInCircle(arr));
+        System.out.println(biggestIsland(initialize()));
 
     }
-
-
 
 }
 
