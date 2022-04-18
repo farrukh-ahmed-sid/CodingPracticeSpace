@@ -8,11 +8,11 @@ public class BiggestIsland {
 
         return new String[][]{
                 {"W", "W", "W", "W", "W", "W"},
-                {"W", "L", "b", "W", "W", "W"},
+                {"W", "L", "L", "W", "W", "W"},
                 {"W", "L", "L", "W", "W", "W"},
                 {"W", "W", "W", "W", "W", "W"},
                 {"W", "W", "W", "W", "W", "W"},
-                {"W", "W", "b", "W", "L", "L"},
+                {"W", "W", "L", "W", "L", "L"},
         };
 
     }
