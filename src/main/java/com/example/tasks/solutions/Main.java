@@ -1,13 +1,17 @@
 package com.example.tasks.solutions;
 
 
-import static com.example.tasks.solutions.graphs.BiggestIsland.initialize;
-import static com.example.tasks.solutions.graphs.BiggestIsland.biggestIsland;
+import com.example.tasks.solutions.tree.BinaryTreeTraverse;
+import com.example.tasks.solutions.tree.Node;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println(biggestIsland(initialize()));
+        BinaryTreeTraverse treeTraverse = new BinaryTreeTraverse();
+
+        Node node = treeTraverse.initialize();
+
+        treeTraverse.postOrderTravers(node);
 
     }
 
