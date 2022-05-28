@@ -1,4 +1,4 @@
-package com.example.tasks.solutions.hackerrank.trie;
+package com.example.tasks.solutions.trie.hackerrank;
 
 import java.util.ArrayList;
 import java.util.HashMap;

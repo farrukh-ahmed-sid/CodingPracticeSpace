@@ -2,6 +2,10 @@ package com.example.tasks.solutions.codility.zalando;
 
 public class ChangeDigitDivideByThree {
 
+    /*Given a string str representing a number having N digits,
+    calculate the number of ways to make the given number divisible by 3
+    by changing at most one digit of the number.*/
+
     public static void findCount(String number) {
 
         int sum = 0;

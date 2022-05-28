@@ -1,4 +1,4 @@
-package com.example.tasks.solutions.hackerrank;
+package com.example.tasks.solutions.tree.hackerrank;
 
 public class BalancedBrackets {
 
