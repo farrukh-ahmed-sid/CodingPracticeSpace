@@ -1,18 +1,20 @@
 package com.example.tasks.solutions;
 
 
-import com.example.tasks.solutions.tree.BinaryTreeTraverse;
-import com.example.tasks.solutions.tree.Node;
+import com.example.tasks.solutions.search.BinarySearch;
 
 public class Main {
 
     public static void main(String[] args) {
-        BinaryTreeTraverse treeTraverse = new BinaryTreeTraverse();
+        BinarySearch search = new BinarySearch();
 
-        Node node = treeTraverse.initialize();
+        int[] arr = search.initialize();
 
-        treeTraverse.postOrderTravers(node);
+        for(int i : arr){
+            System.out.println(search.binarySearchIterative(arr, i));
+        }
 
+        System.out.println(search.binarySearchIterative(arr, 12));
     }
 
 }
