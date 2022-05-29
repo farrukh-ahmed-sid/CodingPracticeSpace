@@ -2,13 +2,13 @@ package com.example.tasks.solutions;
 
 public class BalancedBrackets {
 
-    public static String initialize() {
+    public String initialize() {
         return "{(([])[])[]}\n" +
                 "{(([])[])[]]}\n" +
                 "{(([])[])[]}[]";
     }
 
-    public static String isBalanced(String s) {
+    public String isBalanced(String s) {
 
         int size = -1;
 

@@ -5,14 +5,13 @@ import java.util.List;
 
 public class GuardAndAssassin {
 
-    static List<String> visited = new ArrayList<>();
-    static final String BLOCK = "b";
-    static final String VIEW = "e";
-    static final String PATH = "_";
-    static final String ASSASSIN = "a";
+    private static final List<String> visited = new ArrayList<>();
+    private static final String BLOCK = "b";
+    private static final String VIEW = "e";
+    private static final String PATH = "_";
+    private static final String ASSASSIN = "a";
 
-
-    public static String[][] initialize() {
+    public String[][] initialize() {
 
         return new String[][]{
                 {"_", "_", "_", "_", "_", "_"},
@@ -25,7 +24,7 @@ public class GuardAndAssassin {
 
     }
 
-    public static boolean guardAndAssassin(String[][] box) {
+    public boolean guardAndAssassin(String[][] box) {
         int rowSize = box.length;
         int colSize = box[0].length;
         boolean possible = false;
@@ -83,7 +82,7 @@ public class GuardAndAssassin {
     }
 
 
-    private static boolean evaluate(int r, int c, String[][] box) {
+    private boolean evaluate(int r, int c, String[][] box) {
         boolean result = r == box.length - 1 && c == box[0].length - 1;
 
         if (result) {

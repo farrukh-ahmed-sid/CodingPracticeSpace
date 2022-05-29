@@ -2,9 +2,9 @@ package com.example.tasks.solutions.graphs;
 
 public class BiggestIsland {
 
-    static int count = 0;
+    int count = 0;
 
-    public static String[][] initialize() {
+    public String[][] initialize() {
 
         return new String[][]{
                 {"W", "W", "W", "W", "W", "W"},
@@ -14,10 +14,9 @@ public class BiggestIsland {
                 {"W", "W", "W", "W", "W", "W"},
                 {"W", "W", "L", "W", "L", "L"},
         };
-
     }
     
-    public static int biggestIsland(String[][] box) {
+    public int biggestIsland(String[][] box) {
 
         int val = 0;
 
@@ -34,7 +33,7 @@ public class BiggestIsland {
         return val;
     }
 
-    private static boolean evaluateWaterAndLand(int r, int c, String[][] box) {
+    private boolean evaluateWaterAndLand(int r, int c, String[][] box) {
         if((r < 0 || c < 0 || r == box.length || c == box[0].length)
                 || (box[r][c].equalsIgnoreCase("w")
                 || box[r][c].equalsIgnoreCase("y"))){

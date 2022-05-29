@@ -6,7 +6,7 @@ public class ChangeDigitDivideByThree {
     calculate the number of ways to make the given number divisible by 3
     by changing at most one digit of the number.*/
 
-    public static void findCount(String number) {
+    public void findCount(String number) {
 
         int sum = 0;
 

@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class MergeSort {
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         int[] array = {6, 5, 12, 10, 9, 1};
         mergeSort(array, 0, array.length - 1);
         System.out.println("Sorted Array: " + Arrays.toString(array));
     }
 
-    public static void mergeSort(int[] array, int left, int right) {
+    public void mergeSort(int[] array, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
 
@@ -20,7 +20,7 @@ public class MergeSort {
         }
     }
 
-    public static void merge(int[] array, int left, int mid, int right) {
+    public void merge(int[] array, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 

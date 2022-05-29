@@ -5,7 +5,7 @@ import java.util.List;
 
 public class RemoveLettersFromString {
 
-    public static String solution(String input) {
+    public String solution(String input) {
 
         int size = input.length();
         List<String> lettersToBeRemove = Arrays.asList("AB", "BA", "CD", "DC");
@@ -21,7 +21,7 @@ public class RemoveLettersFromString {
         return input;
     }
 
-    private static String removeString(String input, String sub) {
+    private String removeString(String input, String sub) {
         input = input.replace(sub, " ").trim();
 
         if (input.contains(" ")) {

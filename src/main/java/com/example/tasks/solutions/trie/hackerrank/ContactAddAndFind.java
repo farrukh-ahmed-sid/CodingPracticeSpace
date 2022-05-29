@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class ContactAddAndFind {
 
-    public static List<List<String>> initialize() {
+    public List<List<String>> initialize() {
         List<String> l1 = new ArrayList<>();
         l1.add("add");
         l1.add("hack");
@@ -26,7 +26,7 @@ public class ContactAddAndFind {
         return result;
     }
 
-    public static List<Integer> contacts(List<List<String>> queries) {
+    public List<Integer> contacts(List<List<String>> queries) {
         NodeService nodeService = new NodeService();
 
         List<Integer> result = new ArrayList<>();

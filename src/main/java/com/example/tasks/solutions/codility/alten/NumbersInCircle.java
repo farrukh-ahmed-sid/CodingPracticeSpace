@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NumbersInCircle {
-    public static int numberOfEvenSumsOfValuesInCircle(int[] A) {
+    public int numberOfEvenSumsOfValuesInCircle(int[] A) {
         int count = 0;
         List<Integer> indexList = new ArrayList<>();
 

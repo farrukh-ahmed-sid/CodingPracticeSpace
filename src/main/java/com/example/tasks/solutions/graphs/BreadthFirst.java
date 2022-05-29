@@ -1,14 +1,25 @@
 package com.example.tasks.solutions.graphs;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
 
 public class BreadthFirst {
 
+    public Map<String, String> initialize() {
+        Map<String, String> graph = new HashMap<>();
+        graph.put("a", "b,c");
+        graph.put("b", "d");
+        graph.put("c", "e");
+        graph.put("d", "f");
+        graph.put("e", null);
+        graph.put("f", null);
+        return graph;
+    }
 
-    public static void breadthFirst(Map<String, String> map, String current) {
+    public void breadthFirst(Map<String, String> map, String current) {
         Queue<String> queue = new LinkedList<>();
         queue.add(current);
 
@@ -16,15 +27,15 @@ public class BreadthFirst {
             current = queue.poll();
             System.out.println(current);
 
-            if (map.get(current).contains(",")) {
-                String[] arr = map.get(current).split(",");
-                queue.addAll(Arrays.asList(arr));
+            if (map.get(current) != null) {
+                if (map.get(current).contains(",")) {
+                    String[] arr = map.get(current).split(",");
+                    queue.addAll(Arrays.asList(arr));
 
-            } else if (!map.get(current).isEmpty()) {
-                queue.add(map.get(current));
+                } else if (!map.get(current).isEmpty()) {
+                    queue.add(map.get(current));
+                }
             }
-
         }
-
     }
 }

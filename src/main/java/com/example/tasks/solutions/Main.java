@@ -1,20 +1,19 @@
 package com.example.tasks.solutions;
 
 
-import com.example.tasks.solutions.search.BinarySearch;
+import com.example.tasks.solutions.graphs.BreadthFirst;
+
+import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
-        BinarySearch search = new BinarySearch();
 
-        int[] arr = search.initialize();
+        BreadthFirst breadthFirst = new BreadthFirst();
 
-        for(int i : arr){
-            System.out.println(search.binarySearchIterative(arr, i));
-        }
+        Map<String, String> map = breadthFirst.initialize();
+        breadthFirst.breadthFirst(map, "a");
 
-        System.out.println(search.binarySearchIterative(arr, 12));
     }
 
 }

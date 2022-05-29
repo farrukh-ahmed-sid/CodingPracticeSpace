@@ -2,11 +2,20 @@ package com.example.tasks.solutions.graphs.hackerrank;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Set;
 
 public class ShortestReachInGraph {
 
-    public static void shortestReachInGraph() {
+    public void shortestReachInGraph() {
         Scanner scanner = null;
 
         try {
@@ -97,7 +106,7 @@ public class ShortestReachInGraph {
         scanner.close();
     }
 
-    private static void pathBetweenNodes(Map<Integer, Set<Integer>> pathToNextNodes, int key, int value) {
+    private void pathBetweenNodes(Map<Integer, Set<Integer>> pathToNextNodes, int key, int value) {
         Set<Integer> values;
 
         if (Objects.isNull(pathToNextNodes.get(key))) {
