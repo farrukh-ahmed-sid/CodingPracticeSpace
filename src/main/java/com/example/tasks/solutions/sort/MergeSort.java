@@ -1,14 +1,6 @@
 package com.example.tasks.solutions.sort;
 
-import java.util.Arrays;
-
 public class MergeSort {
-
-    public void main(String[] args) {
-        int[] array = {6, 5, 12, 10, 9, 1};
-        mergeSort(array, 0, array.length - 1);
-        System.out.println("Sorted Array: " + Arrays.toString(array));
-    }
 
     public void mergeSort(int[] array, int left, int right) {
         if (left < right) {
