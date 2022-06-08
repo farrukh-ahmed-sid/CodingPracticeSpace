@@ -9,8 +9,12 @@ public class Main {
     public static void main(String[] args) {
 
         SmallestKthElement smallestKthElement = new SmallestKthElement();
-        Node n = smallestKthElement.kthSmallest(smallestKthElement.initialize(), 3);
-        System.out.println(n.getData());
+        Node n = smallestKthElement.kthSmallest2(smallestKthElement.initialize(), 4);
+
+        if (n == null)
+            System.out.println(n);
+        else
+            System.out.println(n.data);
 
     }
 
