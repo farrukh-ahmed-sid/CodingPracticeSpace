@@ -1,6 +1,6 @@
 package com.example.tasks.solutions.tree;
 
-public class BinaryTreeTraverse extends BinaryTreeBase {
+public class TraverseBinaryTree extends BaseBinaryTree {
 
     public void inOrderTravers(Node node) {
 
@@ -12,6 +12,20 @@ public class BinaryTreeTraverse extends BinaryTreeBase {
 
         if (node.right != null) {
             inOrderTravers(node.right);
+        }
+
+    }
+
+    public void inOrderReverseTravers(Node node) {
+
+        if (node.right != null) {
+            inOrderReverseTravers(node.right);
+        }
+
+        System.out.println(node.data);
+
+        if (node.left != null) {
+            inOrderReverseTravers(node.left);
         }
 
     }

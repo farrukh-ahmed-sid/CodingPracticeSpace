@@ -2,7 +2,7 @@ package com.example.tasks.solutions.tree;
 
 import java.util.Objects;
 
-public class BinaryTreeBase {
+public class BaseBinaryTree {
 
     private int count = 0;
     private int max = 0;

@@ -1,6 +1,6 @@
 package com.example.tasks.solutions.tree;
 
-public class SmallestKthElement extends BinaryTreeBase {
+public class SmallestKthElement extends BaseBinaryTree {
 
     int count;
 
