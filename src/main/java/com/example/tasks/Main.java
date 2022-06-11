@@ -1,28 +1,22 @@
 package com.example.tasks;
 
 
-import com.example.tasks.solutions.tree.LargestKthElement;
-import com.example.tasks.solutions.tree.Node;
+import com.example.tasks.solutions.list.DoublyLinkedList;
+import com.example.tasks.solutions.list.Node;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        /*SmallestKthElement smallestKthElement = new SmallestKthElement();
-        Node n = smallestKthElement.kthSmallest2(smallestKthElement.initialize(), 4);
+        DoublyLinkedList list = new DoublyLinkedList();
+        Node node = null;
+        node = list.insertNodeInAscending(node, 5);
+        node = list.insertNodeInAscending(node, 4);
+        node = list.insertNodeInAscending(node, 3);
+        node = list.insertNodeInAscending(node, 1);
+        node = list.insertNodeInAscending(node, 2);
 
-        if (n == null)
-            System.out.println(n);
-        else
-            System.out.println(n.data);*/
-
-        LargestKthElement kthElement = new LargestKthElement();
-        Node n = kthElement.kthLargestElement(kthElement.initialize(), 5);
-
-        if (n == null)
-            System.out.println(n);
-        else
-            System.out.println(n.data);
+        list.printLinkedList(node);
 
     }
 
