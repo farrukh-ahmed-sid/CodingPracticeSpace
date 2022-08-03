@@ -1,15 +1,20 @@
 package com.example.tasks;
 
 
-import com.example.tasks.solutions.codility.zalando.MaxEmployAttendSession;
+import com.example.tasks.solutions.sort.BubbleSort;
+
+import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        MaxEmployAttendSession obj = new MaxEmployAttendSession();
-        String[] strings = {"5421", "245", "1452", "0345", "53", "345"};
-        System.out.println(obj.maxAttendees(strings));
+        int[] arr = {4,2,6,3,1,9,7,5,8};
+
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.sort(arr);
+
+        System.out.println(Arrays.toString(arr));
     }
 
 }
