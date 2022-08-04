@@ -1,7 +1,7 @@
 package com.example.tasks;
 
 
-import com.example.tasks.solutions.sort.BubbleSort;
+import com.example.tasks.solutions.sort.MergeSort;
 
 import java.util.Arrays;
 
@@ -11,8 +11,8 @@ public class Main {
 
         int[] arr = {4,2,6,3,1,9,7,5,8};
 
-        BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.sort(arr);
+        MergeSort sort = new MergeSort();
+        sort.sort(arr);
 
         System.out.println(Arrays.toString(arr));
     }

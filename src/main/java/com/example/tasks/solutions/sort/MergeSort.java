@@ -2,9 +2,13 @@ package com.example.tasks.solutions.sort;
 
 public class MergeSort {
 
-    public void mergeSort(int[] array, int left, int right) {
+    public void sort(int[] array) {
+        mergeSort(array, 0, array.length - 1);
+    }
+
+    private void mergeSort(int[] array, int left, int right) {
         if (left < right) {
-            int mid = (left + right) / 2;
+            int mid = left + (right - left) / 2;
 
             mergeSort(array, left, mid);
             mergeSort(array, mid + 1, right);
@@ -12,7 +16,7 @@ public class MergeSort {
         }
     }
 
-    public void merge(int[] array, int left, int mid, int right) {
+    private void merge(int[] array, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
