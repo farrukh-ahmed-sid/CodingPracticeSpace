@@ -1,9 +1,9 @@
 package com.example.tasks.solutions.tree;
 
-import com.example.tasks.solutions.tree.base.BaseBinaryTree;
+import com.example.tasks.solutions.tree.base.BinaryTreeBase;
 import com.example.tasks.solutions.tree.base.Node;
 
-public class TraverseBinaryTree extends BaseBinaryTree {
+public class BinaryTreeTraverse extends BinaryTreeBase {
 
     public void inOrderTravers(Node node) {
 
@@ -58,6 +58,18 @@ public class TraverseBinaryTree extends BaseBinaryTree {
         }
 
         System.out.println(node.data);
+    }
+
+    public void printLeafNodes(Node node) {
+        if (node.left == null && node.right == null) {
+            System.out.println(node.data);
+        }
+        if (node.left != null) {
+            printLeafNodes(node.left);
+        }
+        if (node.right != null) {
+            printLeafNodes(node.right);
+        }
     }
 
 }

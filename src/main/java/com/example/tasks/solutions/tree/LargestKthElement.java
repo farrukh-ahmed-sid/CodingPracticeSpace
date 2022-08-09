@@ -1,9 +1,9 @@
 package com.example.tasks.solutions.tree;
 
-import com.example.tasks.solutions.tree.base.BaseBinaryTree;
+import com.example.tasks.solutions.tree.base.BinaryTreeBase;
 import com.example.tasks.solutions.tree.base.Node;
 
-public class LargestKthElement extends BaseBinaryTree {
+public class LargestKthElement extends BinaryTreeBase {
 
     int count;
 

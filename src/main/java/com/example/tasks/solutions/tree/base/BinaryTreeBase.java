@@ -1,8 +1,6 @@
 package com.example.tasks.solutions.tree.base;
 
-public class BaseBinaryTree {
-
-    private Node foundNode = null;
+public class BinaryTreeBase {
 
     public Node initialize() {
 
@@ -27,21 +25,24 @@ public class BaseBinaryTree {
         return node;
     }
 
-    public Node getNode(Node root, Integer val) {
+    public Node getNode(Node head, Integer val) {
 
-        findNode(root, val);
-        return foundNode;
-    }
-
-    private void findNode(Node node, Integer val) {
-        if (foundNode == null) {
-            if (val.equals(node.data)) {
-                foundNode = node;
-            } else if (node.data > val) {
-                findNode(node.left, val);
-            } else {
-                findNode(node.right, val);
+        if (head != null) {
+            if (head.data > val) {
+                head = getNode(head.left, val);
+            } else if (head.data < val) {
+                head = getNode(head.right, val);
             }
         }
+        return head;
     }
+
+    public void removeNode(Node node, Integer val) {
+
+        if (node.data.equals(val)) {
+            node = null;
+        }
+
+    }
+
 }
