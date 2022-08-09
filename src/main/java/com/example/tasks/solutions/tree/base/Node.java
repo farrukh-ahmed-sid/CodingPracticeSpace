@@ -1,4 +1,4 @@
-package com.example.tasks.solutions.tree;
+package com.example.tasks.solutions.tree.base;
 
 public class Node {
 
