@@ -66,4 +66,13 @@ public class BinaryTreeBase {
             return inOrderPredecessor(node.right);
         }
     }
+
+    private Node inOrderSuccessor(Node node) {
+
+        if (node.left == null) {
+            return node;
+        } else {
+            return inOrderPredecessor(node.left);
+        }
+    }
 }
