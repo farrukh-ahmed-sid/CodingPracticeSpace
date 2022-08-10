@@ -29,29 +29,4 @@ public class SmallestKthElement extends BinaryTreeBase {
         return kthSmallest(root.right, k);
     }
 
-    public Node kthSmallest2(Node node, int k) {
-
-        Node n = null;
-
-        if (node.left != null) {
-            n = kthSmallest2(node.left, k);
-        }
-
-        if(n != null){
-            return n;
-        }
-
-        if (count != k) {
-            count++;
-        }
-
-        if (count == k) {
-            return node;
-        }
-
-        if (node.right != null) {
-            n = kthSmallest2(node.right, k);
-        }
-        return n;
-    }
 }
