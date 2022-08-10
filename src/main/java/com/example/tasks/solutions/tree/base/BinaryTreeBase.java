@@ -37,12 +37,33 @@ public class BinaryTreeBase {
         return head;
     }
 
-    public void removeNode(Node node, Integer val) {
+    public Node removeNode(Node node, Integer val) {
 
-        if (node.data.equals(val)) {
-            node = null;
+        if (node.data > val) {
+            node.left = removeNode(node.left, val);
+        } else if (node.data < val) {
+            node.right = removeNode(node.right, val);
+        } else {
+            if (node.left == null && node.right == null) {
+                node = null;
+            } else if (node.left == null) {
+                node = node.right;
+            } else if (node.right == null) {
+                node = node.left;
+            } else {
+                node.data = inOrderPredecessor(node.left).data;
+                node.left = removeNode(node.left, node.data);
+            }
         }
-
+        return node;
     }
 
+    private Node inOrderPredecessor(Node node) {
+
+        if (node.right == null) {
+            return node;
+        } else {
+            return inOrderPredecessor(node.right);
+        }
+    }
 }

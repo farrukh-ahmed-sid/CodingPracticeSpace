@@ -10,9 +10,8 @@ public class Main {
 
         BinaryTreeTraverse binaryTree = new BinaryTreeTraverse();
         Node node = binaryTree.initialize();
-        binaryTree.printLeafNodes(node);
-
-
+        node = binaryTree.removeNode(node, 7);
+        binaryTree.inOrderTravers(node);
     }
 
 }
