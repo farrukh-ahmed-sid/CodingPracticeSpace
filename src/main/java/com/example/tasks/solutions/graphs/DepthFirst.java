@@ -1,5 +1,6 @@
 package com.example.tasks.solutions.graphs;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -23,20 +24,16 @@ public class DepthFirst {
         stack.push(current);
 
         while (!stack.empty()) {
-            current = stack.get(stack.size() - 1);
+            current = stack.pop();
             System.out.println(current);
+            String str = map.get(current);
 
-            stack.pop();
-
-            if(map.get(current) != null){
-                if (map.get(current).contains(",")) {
-                    String[] arr = map.get(current).split(",");
-
-                    for (String s : arr) {
-                        stack.push(s);
-                    }
-                } else if (!map.get(current).isEmpty()) {
-                    stack.push(map.get(current));
+            if(str != null){
+                if (str.contains(",")) {
+                    String[] strArr = str.split(",");
+                    stack.addAll(Arrays.asList(strArr));
+                } else {
+                    stack.push(str);
                 }
             }
         }

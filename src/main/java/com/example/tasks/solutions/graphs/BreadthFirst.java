@@ -27,13 +27,14 @@ public class BreadthFirst {
             current = queue.poll();
             System.out.println(current);
 
-            if (map.get(current) != null) {
-                if (map.get(current).contains(",")) {
-                    String[] arr = map.get(current).split(",");
-                    queue.addAll(Arrays.asList(arr));
+            String str = map.get(current);
 
-                } else if (!map.get(current).isEmpty()) {
-                    queue.add(map.get(current));
+            if (str != null) {
+                if (str.contains(",")) {
+                    String[] strArr = str.split(",");
+                    queue.addAll(Arrays.asList(strArr));
+                } else {
+                    queue.add(str);
                 }
             }
         }
