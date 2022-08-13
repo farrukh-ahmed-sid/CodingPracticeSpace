@@ -10,14 +10,10 @@ public class Main {
     public static void main(String[] args) {
 
         GraphBase graphBase = new GraphBase();
-
         Map<String, String> map = graphBase.getAdjacencyListFromUndirectedGraph(graphBase.initialize());
-
-
-        System.out.println(map);
+        System.out.println(graphBase.hasPathUndirectedGraph(map, "b", "d"));
 
     }
-
 
 }
 

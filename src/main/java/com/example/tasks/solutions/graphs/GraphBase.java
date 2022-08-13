@@ -2,6 +2,7 @@ package com.example.tasks.solutions.graphs;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
@@ -104,14 +105,15 @@ public class GraphBase {
         for (String key : keySet) {
             String val = map.get(key);
 
-            if (val != null) {
-
-                if (adjacencyListMap.containsKey(key)) {
+            if (adjacencyListMap.containsKey(key)) {
+                if(val != null){
                     adjacencyListMap.put(key, adjacencyListMap.get(key) + "," + val);
-                } else {
-                    adjacencyListMap.put(key, val);
                 }
+            } else {
+                adjacencyListMap.put(key, val);
+            }
 
+            if (val != null) {
                 if (val.contains(",")) {
 
                     for (String v : val.split(",")) {
@@ -133,9 +135,44 @@ public class GraphBase {
         return adjacencyListMap;
     }
 
-    //TODO: complete this
     public boolean hasPathUndirectedGraph(Map<String, String> map, String src, String dst) {
-        Map<String, String> m = getAdjacencyListFromUndirectedGraph(map);
+        map = getAdjacencyListFromUndirectedGraph(map);
+
+        Set<String> visitedNodes = new HashSet<>();
+
+        if (src.equals(dst)) {
+            return true;
+        }
+        Stack<String> stack = new Stack<>();
+        stack.push(src);
+
+        while (!stack.isEmpty()) {
+            String str = map.get(stack.pop());
+
+            if (str != null) {
+                if (str.contains(",")) {
+                    String[] strArr = str.split(",");
+
+                    for (String s : strArr) {
+                        if (s.equals(dst)) {
+                            return true;
+                        }
+                        if (!visitedNodes.contains(s)) {
+                            stack.push(s);
+                            visitedNodes.add(s);
+                        }
+                    }
+                } else if (str.equals(dst)) {
+                    return true;
+                } else {
+                    if (!visitedNodes.contains(str)) {
+                        stack.push(str);
+                        visitedNodes.add(str);
+                    }
+                }
+            }
+        }
         return false;
     }
+
 }
