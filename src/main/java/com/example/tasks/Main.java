@@ -1,18 +1,23 @@
 package com.example.tasks;
 
 
-import com.example.tasks.solutions.tree.BinaryTreeTraverse;
-import com.example.tasks.solutions.tree.base.Node;
+import com.example.tasks.solutions.graphs.GraphBase;
+
+import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        BinaryTreeTraverse binaryTree = new BinaryTreeTraverse();
-        Node node = binaryTree.initialize();
-        node = binaryTree.removeNode(node, 7);
-        binaryTree.inOrderTravers(node);
+        GraphBase graphBase = new GraphBase();
+
+        Map<String, String> map = graphBase.getAdjacencyListFromUndirectedGraph(graphBase.initialize());
+
+
+        System.out.println(map);
+
     }
+
 
 }
 
