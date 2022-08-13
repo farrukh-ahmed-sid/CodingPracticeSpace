@@ -97,44 +97,6 @@ public class GraphBase {
     }
 
     //undirected graph is both direction graph
-    public Map<String, String> getAdjacencyListFromUndirectedGraph(Map<String, String> map) {
-        Map<String, String> adjacencyListMap = new HashMap<>();
-
-        Set<String> keySet = map.keySet();
-
-        for (String key : keySet) {
-            String val = map.get(key);
-
-            if (adjacencyListMap.containsKey(key)) {
-                if(val != null){
-                    adjacencyListMap.put(key, adjacencyListMap.get(key) + "," + val);
-                }
-            } else {
-                adjacencyListMap.put(key, val);
-            }
-
-            if (val != null) {
-                if (val.contains(",")) {
-
-                    for (String v : val.split(",")) {
-                        if (adjacencyListMap.containsKey(v)) {
-                            adjacencyListMap.put(v, adjacencyListMap.get(v) + "," + key);
-                        } else {
-                            adjacencyListMap.put(v, key);
-                        }
-                    }
-                } else {
-                    if (adjacencyListMap.containsKey(val)) {
-                        adjacencyListMap.put(val, adjacencyListMap.get(val) + "," + key);
-                    } else {
-                        adjacencyListMap.put(val, key);
-                    }
-                }
-            }
-        }
-        return adjacencyListMap;
-    }
-
     public boolean hasPathUndirectedGraph(Map<String, String> map, String src, String dst) {
         map = getAdjacencyListFromUndirectedGraph(map);
 
@@ -175,4 +137,41 @@ public class GraphBase {
         return false;
     }
 
+    public Map<String, String> getAdjacencyListFromUndirectedGraph(Map<String, String> map) {
+        Map<String, String> adjacencyListMap = new HashMap<>();
+
+        Set<String> keySet = map.keySet();
+
+        for (String key : keySet) {
+            String val = map.get(key);
+
+            if (adjacencyListMap.containsKey(key)) {
+                if(val != null){
+                    adjacencyListMap.put(key, adjacencyListMap.get(key) + "," + val);
+                }
+            } else {
+                adjacencyListMap.put(key, val);
+            }
+
+            if (val != null) {
+                if (val.contains(",")) {
+
+                    for (String v : val.split(",")) {
+                        if (adjacencyListMap.containsKey(v)) {
+                            adjacencyListMap.put(v, adjacencyListMap.get(v) + "," + key);
+                        } else {
+                            adjacencyListMap.put(v, key);
+                        }
+                    }
+                } else {
+                    if (adjacencyListMap.containsKey(val)) {
+                        adjacencyListMap.put(val, adjacencyListMap.get(val) + "," + key);
+                    } else {
+                        adjacencyListMap.put(val, key);
+                    }
+                }
+            }
+        }
+        return adjacencyListMap;
+    }
 }
