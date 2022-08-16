@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-public class WeightedGraph {
+public class ShortestPathWeightedGraph {
 
     public Map<String, List<NodeWithWeight>> initializeDirectionalGraph() {
         Map<String, List<NodeWithWeight>> paths = new HashMap<>();
