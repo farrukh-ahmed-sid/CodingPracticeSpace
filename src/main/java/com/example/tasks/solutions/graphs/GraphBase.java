@@ -75,7 +75,6 @@ public class GraphBase {
         }
 
         Set<String> unvisited = new HashSet<>(map.keySet());
-        Set<String> visited = new HashSet<>();
         Stack<String> stack = new Stack<>();
 
         while (!unvisited.isEmpty()) {
@@ -83,26 +82,26 @@ public class GraphBase {
             Optional<String> element = unvisited.stream().findFirst();
 
             stack.push(element.get());
+            unvisited.remove(element.get());
 
             while (!stack.isEmpty()) {
                 String val = stack.pop();
-                visited.add(val);
-                unvisited.remove(val);
-
                 String v = map.get(val);
 
-                if(v != null){
+                if (v != null) {
                     if (v.contains(",")) {
                         String[] str = v.split(",");
 
                         for (String s : str) {
-                            if(!visited.contains(s)){
+                            if (unvisited.contains(s)) {
                                 stack.push(s);
+                                unvisited.remove(s);
                             }
                         }
                     } else {
-                        if(!visited.contains(v)){
+                        if (unvisited.contains(v)) {
                             stack.push(v);
+                            unvisited.remove(v);
                         }
                     }
                 }
@@ -111,5 +110,4 @@ public class GraphBase {
         }
         return count;
     }
-
 }
