@@ -8,9 +8,9 @@ public class BiggestIsland {
 
         return new String[][]{
                 {"W", "W", "W", "W", "W", "W"},
-                {"W", "L", "L", "W", "W", "W"},
-                {"W", "L", "L", "W", "W", "W"},
-                {"W", "W", "W", "W", "W", "W"},
+                {"W", "L", "L", "L", "W", "W"},
+                {"W", "L", "L", "L", "W", "W"},
+                {"W", "W", "L", "W", "W", "W"},
                 {"W", "W", "W", "W", "W", "W"},
                 {"W", "W", "L", "W", "L", "L"},
         };
@@ -44,10 +44,11 @@ public class BiggestIsland {
             box[r][c] = "y";
             count++;
         }
-        evaluateWaterAndLand(r, c - 1, box);
         evaluateWaterAndLand(r, c + 1, box);
-        evaluateWaterAndLand(r - 1, c, box);
         evaluateWaterAndLand(r + 1, c, box);
+        evaluateWaterAndLand(r, c - 1, box);
+        evaluateWaterAndLand(r - 1, c, box);
+
         return true;
     }
 
