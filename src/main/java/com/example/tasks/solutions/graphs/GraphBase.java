@@ -4,7 +4,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
@@ -24,7 +26,6 @@ public class GraphBase {
     }
 
     public void depthFirstPrint(Map<String, String> map, String current) {
-
         Stack<String> stack = new Stack<>();
         stack.push(current);
 
@@ -65,113 +66,50 @@ public class GraphBase {
         }
     }
 
-    public boolean hasPathDirectedGraph(Map<String, String> map, String src, String dst) {
+    public int countConnectedGraph(Map<String, String> map) {
 
-        if (src.equals(dst)) {
-            return true;
+        int count = 0;
+
+        if (map.size() == 0) {
+            return count;
         }
+
+        Set<String> unvisited = new HashSet<>(map.keySet());
+        Set<String> visited = new HashSet<>();
         Stack<String> stack = new Stack<>();
-        stack.push(src);
 
-        while (!stack.isEmpty()) {
-            String str = map.get(stack.pop());
+        while (!unvisited.isEmpty()) {
 
-            if (str != null) {
-                if (str.contains(",")) {
-                    String[] strArr = str.split(",");
+            Optional<String> element = unvisited.stream().findFirst();
 
-                    for (String s : strArr) {
-                        if (s.equals(dst)) {
-                            return true;
+            stack.push(element.get());
+
+            while (!stack.isEmpty()) {
+                String val = stack.pop();
+                visited.add(val);
+                unvisited.remove(val);
+
+                String v = map.get(val);
+
+                if(v != null){
+                    if (v.contains(",")) {
+                        String[] str = v.split(",");
+
+                        for (String s : str) {
+                            if(!visited.contains(s)){
+                                stack.push(s);
+                            }
                         }
-                        stack.push(s);
-                    }
-                } else if (str.equals(dst)) {
-                    return true;
-                } else {
-                    stack.push(str);
-                }
-            }
-        }
-        return false;
-    }
-
-    //undirected graph is both direction graph
-    public boolean hasPathUndirectedGraph(Map<String, String> map, String src, String dst) {
-        map = getAdjacencyListFromUndirectedGraph(map);
-
-        Set<String> visitedNodes = new HashSet<>();
-
-        if (src.equals(dst)) {
-            return true;
-        }
-        Stack<String> stack = new Stack<>();
-        stack.push(src);
-
-        while (!stack.isEmpty()) {
-            String str = map.get(stack.pop());
-
-            if (str != null) {
-                if (str.contains(",")) {
-                    String[] strArr = str.split(",");
-
-                    for (String s : strArr) {
-                        if (s.equals(dst)) {
-                            return true;
-                        }
-                        if (!visitedNodes.contains(s)) {
-                            stack.push(s);
-                            visitedNodes.add(s);
-                        }
-                    }
-                } else if (str.equals(dst)) {
-                    return true;
-                } else {
-                    if (!visitedNodes.contains(str)) {
-                        stack.push(str);
-                        visitedNodes.add(str);
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    public Map<String, String> getAdjacencyListFromUndirectedGraph(Map<String, String> map) {
-        Map<String, String> adjacencyListMap = new HashMap<>();
-
-        Set<String> keySet = map.keySet();
-
-        for (String key : keySet) {
-            String val = map.get(key);
-
-            if (adjacencyListMap.containsKey(key)) {
-                if(val != null){
-                    adjacencyListMap.put(key, adjacencyListMap.get(key) + "," + val);
-                }
-            } else {
-                adjacencyListMap.put(key, val);
-            }
-
-            if (val != null) {
-                if (val.contains(",")) {
-
-                    for (String v : val.split(",")) {
-                        if (adjacencyListMap.containsKey(v)) {
-                            adjacencyListMap.put(v, adjacencyListMap.get(v) + "," + key);
-                        } else {
-                            adjacencyListMap.put(v, key);
-                        }
-                    }
-                } else {
-                    if (adjacencyListMap.containsKey(val)) {
-                        adjacencyListMap.put(val, adjacencyListMap.get(val) + "," + key);
                     } else {
-                        adjacencyListMap.put(val, key);
+                        if(!visited.contains(v)){
+                            stack.push(v);
+                        }
                     }
                 }
             }
+            count++;
         }
-        return adjacencyListMap;
+        return count;
     }
+
 }
