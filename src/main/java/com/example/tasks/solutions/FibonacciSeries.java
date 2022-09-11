@@ -17,7 +17,7 @@ public class FibonacciSeries {
     //n represent nth fib number. Its linear O(n).
     public int fibonacciSeriesDynamicProgramming(int n) {
         if (n < 3) {
-            return n;
+            return n-1;
         } else {
             int pre = 0;
             int next = 1;
