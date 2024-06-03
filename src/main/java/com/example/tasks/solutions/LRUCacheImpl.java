@@ -21,7 +21,7 @@ public class LRUCacheImpl {
         return hashMap.get(key);
     }
 
-    public void put(int key, String val) {
+    public synchronized void put(int key, String val) {
         if (!hashMap.containsKey(key)) {
             if (doublyQueue.size() == CACHE_SIZE) {
                 int last = doublyQueue.removeLast();
