@@ -1,37 +1,42 @@
 package com.example.tasks.solutions;
 
 import java.util.Deque;
-import java.util.HashSet;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class LRUCacheImpl {
 
     private final Deque<Integer> doublyQueue;
-    private final HashSet<Integer> hashSet;
+    private final Map<Integer, String> hashMap;
     private final int CACHE_SIZE;
 
     public LRUCacheImpl(int capacity) {
         doublyQueue = new LinkedList<>();
-        hashSet = new HashSet<>();
+        hashMap = new HashMap<>();
         CACHE_SIZE = capacity;
     }
 
-    public void refer(int key) {
-        if (!hashSet.contains(key)) {
+    public String get(int key) {
+        return hashMap.get(key);
+    }
+
+    public void put(int key, String val) {
+        if (!hashMap.containsKey(key)) {
             if (doublyQueue.size() == CACHE_SIZE) {
                 int last = doublyQueue.removeLast();
-                hashSet.remove(last);
+                hashMap.remove(last);
             }
         } else {
             doublyQueue.remove(key);
         }
         doublyQueue.push(key);
-        hashSet.add(key);
+        hashMap.put(key, val);
     }
 
     public void display() {
-        for (Integer integer : doublyQueue) {
-            System.out.print(integer + " ");
+        for (Integer k : doublyQueue) {
+            System.out.print(hashMap.get(k) + " ");
         }
         System.out.println();
     }
