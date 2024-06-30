@@ -1,22 +1,17 @@
 package com.example.tasks;
 
 
-import com.example.tasks.code.search.BinarySearch;
+import com.example.tasks.code.recursion.FibonacciSeries;
+import com.example.tasks.code.recursion.StringAndRecursion;
+
+import java.util.HashSet;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,2,3,4,5,6,7};
-
-        BinarySearch binarySearch = new BinarySearch();
-        boolean b = binarySearch.binarySearchIterative(arr, 55);
-
-        System.out.println(b);
-
-        for(int e : arr) {
-            System.out.println(e);
-        }
+        StringAndRecursion stringAndRecursion = new StringAndRecursion();
+        stringAndRecursion.uniqueSubsequences("abb", 0, "", new HashSet<>());
 
     }
 
