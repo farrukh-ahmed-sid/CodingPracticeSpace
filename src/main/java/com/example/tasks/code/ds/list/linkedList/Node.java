@@ -1,4 +1,4 @@
-package com.example.tasks.code.ds.list;
+package com.example.tasks.code.ds.list.linkedList;
 
 public class Node {
 

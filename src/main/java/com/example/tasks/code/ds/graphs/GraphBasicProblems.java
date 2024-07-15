@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
 
-public class GraphCoreProblems {
+public class GraphBasicProblems {
 
     public Map<String, String> initialize() {
         Map<String, String> graph = new HashMap<>();

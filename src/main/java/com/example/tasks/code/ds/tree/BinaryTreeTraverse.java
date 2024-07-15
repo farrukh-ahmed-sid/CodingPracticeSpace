@@ -1,9 +1,9 @@
 package com.example.tasks.code.ds.tree;
 
-import com.example.tasks.code.ds.tree.base.BinaryTreeBase;
+import com.example.tasks.code.ds.tree.base.BinaryTreeBaseProblems;
 import com.example.tasks.code.ds.tree.base.Node;
 
-public class BinaryTreeTraverse extends BinaryTreeBase {
+public class BinaryTreeTraverse extends BinaryTreeBaseProblems {
 
     public void inOrderTravers(Node node) {
 

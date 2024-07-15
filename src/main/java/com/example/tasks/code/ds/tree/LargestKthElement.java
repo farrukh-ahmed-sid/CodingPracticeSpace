@@ -1,22 +1,23 @@
 package com.example.tasks.code.ds.tree;
 
-import com.example.tasks.code.ds.tree.base.BinaryTreeBase;
+import com.example.tasks.code.ds.tree.base.BinaryTreeBaseProblems;
 import com.example.tasks.code.ds.tree.base.Node;
 
-public class LargestKthElement extends BinaryTreeBase {
+public class LargestKthElement extends BinaryTreeBaseProblems {
 
     int count;
 
+    // With reverse inorder traversal
     public Node kthLargestElement(Node node, int k) {
 
         if (node == null) {
             return null;
         }
 
-        Node n = kthLargestElement(node.right, k);
+        Node right = kthLargestElement(node.right, k);
 
-        if (n != null) {
-            return n;
+        if (right != null) {
+            return right;
         }
 
         count++;

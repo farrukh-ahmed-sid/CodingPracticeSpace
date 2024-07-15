@@ -1,34 +1,24 @@
 package com.example.tasks.code.ds.tree;
 
+import com.example.tasks.code.ds.tree.base.BinaryTreeBaseProblems;
 import com.example.tasks.code.ds.tree.base.Node;
 
 import java.util.Objects;
 
-public class TreeHeight {
-
-    private int count = 0;
-    private int max = 0;
+public class TreeHeight extends BinaryTreeBaseProblems {
 
     //Return count of tree height/levels. Root consider 0 height
-    public int height(Node root) {
+    public int height(Node node) {
 
-        if (Objects.isNull(root.left) && Objects.isNull(root.right)) {
-            return max;
-        }
+        if (node == null)
+            return 0;
+        else {
+            /* compute the depth of each subtree */
+            int lDepth = height(node.left);
+            int rDepth = height(node.right);
 
-        count++;
-
-        if (Objects.nonNull(root.left)) {
-            height(root.left);
+            /* use the larger one */
+            return Math.max(lDepth, rDepth) + 1;
         }
-        if (Objects.nonNull(root.right)) {
-            height(root.right);
-        }
-        if (count > max) {
-            max = count;
-        }
-        count--;
-
-        return max;
     }
 }

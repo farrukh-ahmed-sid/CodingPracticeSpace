@@ -1,13 +1,14 @@
 package com.example.tasks.code.ds.tree;
 
-import com.example.tasks.code.ds.tree.base.BinaryTreeBase;
+import com.example.tasks.code.ds.tree.base.BinaryTreeBaseProblems;
 import com.example.tasks.code.ds.tree.base.Node;
 
-public class SmallestKthElement extends BinaryTreeBase {
+
+public class SmallestKthElement extends BinaryTreeBaseProblems {
 
     int count;
 
-    // from geeksforgeeks
+    // With inorder traversal
     public Node kthSmallest(Node root, int k) {
         // base case
         if (root == null)
@@ -16,7 +17,7 @@ public class SmallestKthElement extends BinaryTreeBase {
         // search in left subtree
         Node left = kthSmallest(root.left, k);
 
-        // if k'th smallest is found in left subtree, return it
+        // need to return it if value found else count++ will trigger.
         if (left != null)
             return left;
 
