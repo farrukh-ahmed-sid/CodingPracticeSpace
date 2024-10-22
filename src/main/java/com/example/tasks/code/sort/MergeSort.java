@@ -2,61 +2,46 @@ package com.example.tasks.code.sort;
 
 public class MergeSort {
 
-    public void sort(int[] array) {
-        mergeSort(array, 0, array.length - 1);
+    public static void sort(int[] array) {
+        mergeSort(array, array.length);
     }
 
-    private void mergeSort(int[] array, int left, int right) {
-        if (left < right) {
-            int mid = left + (right - left) / 2;
-
-            mergeSort(array, left, mid);
-            mergeSort(array, mid + 1, right);
-            merge(array, left, mid, right);
+    private static void mergeSort(int[] arr, int size) {
+        if (size < 2) {
+            return;
         }
+        int mid = size / 2;
+        int[] l = new int[mid];
+        int[] r = new int[size - mid];
+
+        for (int i = 0; i < mid; i++) {
+            l[i] = arr[i];
+        }
+        for (int i = mid; i < size; i++) {
+            r[i - mid] = arr[i];
+        }
+        mergeSort(l, mid);
+        mergeSort(r, size - mid);
+
+        merge(arr, l, r, mid, size - mid);
     }
 
-    private void merge(int[] array, int left, int mid, int right) {
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+    private static void merge(int[] arr, int[] l, int[] r, int leftSize, int rightSize) {
 
-        int[] leftArr = new int[n1];
-        int[] rightArr = new int[n2];
+        int i = 0, j = 0, arrIndex = 0;
 
-        // fill the left and right array.
-        for (int i = 0; i < n1; i++)
-            leftArr[i] = array[left + i];
-        for (int j = 0; j < n2; j++)
-            rightArr[j] = array[mid + 1 + j];
-
-        int i, j, arrayIndex;
-        i = 0;
-        j = 0;
-        arrayIndex = left;
-
-        // sort main array with left and right array.
-        while (i < n1 && j < n2) {
-            if (leftArr[i] <= rightArr[j]) {
-                array[arrayIndex] = leftArr[i];
-                i++;
+        while (i < leftSize && j < rightSize) {
+            if (l[i] <= r[j]) {
+                arr[arrIndex++] = l[i++];
             } else {
-                array[arrayIndex] = rightArr[j];
-                j++;
+                arr[arrIndex++] = r[j++];
             }
-            arrayIndex++;
         }
-
-        // fill remaining from left and right in main array.
-        while (i < n1) {
-            array[arrayIndex] = leftArr[i];
-            i++;
-            arrayIndex++;
+        while (i < leftSize) {
+            arr[arrIndex++] = l[i++];
         }
-
-        while (j < n2) {
-            array[arrayIndex] = rightArr[j];
-            j++;
-            arrayIndex++;
+        while (j < rightSize) {
+            arr[arrIndex++] = r[j++];
         }
     }
 }

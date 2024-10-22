@@ -7,11 +7,13 @@ public class DecimalToBinary {
 
     public String decimalToBinary(int val) {
 
-        if (val <= 1) {
-            return val + result;
-        } else {
-            result = val % 2 + result;
-            return decimalToBinary(val / 2);
+        if (val == 0) {
+            if (result.isBlank()) {
+                return String.valueOf(val);
+            }
+            return result;
         }
+        result = val % 2 + result;
+        return decimalToBinary(val / 2);
     }
 }

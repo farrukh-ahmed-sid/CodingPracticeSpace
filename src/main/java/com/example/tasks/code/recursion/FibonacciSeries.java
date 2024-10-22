@@ -3,15 +3,15 @@ package com.example.tasks.code.recursion;
 public class FibonacciSeries {
 
     //val is number at index, Its exponential O(2^n).
-    private int fibonacciSeriesRecursion(int val) {
+    public int fibRecursion(int val) {
         if (val <= 1) {
             return val;
         }
-        return fibonacciSeriesRecursion(val - 1) + fibonacciSeriesRecursion(val - 2);
+        return fibRecursion(val - 1) + fibRecursion(val - 2);
     }
 
     //val is number at index, Its linear O(n).
-    private int fibonacciSeriesDynamicProgramming(int val) {
+    public int fibIterative(int val) {
         if (val <= 1) {
             return val;
         }
@@ -28,9 +28,15 @@ public class FibonacciSeries {
         return second;
     }
 
-    public void printSeries() {
-        for (int i = 0; i < 10; i++) {
-            System.out.println(fibonacciSeriesDynamicProgramming(i));
+    public int fibMemo(int n, int[] memo) {
+        if (n <= 1) {
+            return n;
         }
+        if (memo[n] != 0) {
+            return memo[n];
+        }
+
+        memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);  // memorize result
+        return memo[n];
     }
 }
