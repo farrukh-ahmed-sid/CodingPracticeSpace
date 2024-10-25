@@ -6,12 +6,11 @@ import java.util.List;
 public class Directory implements FileSystem {
 
     String dirName;
+    List<FileSystem> fileSystems;
 
     public Directory (String name) {
         dirName = name;
     }
-
-    List<FileSystem> fileSystems;
 
     public void add(FileSystem fs) {
         if (fileSystems == null) {

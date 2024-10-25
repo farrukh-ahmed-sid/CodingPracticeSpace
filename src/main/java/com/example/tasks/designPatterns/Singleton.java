@@ -2,7 +2,7 @@ package com.example.tasks.designPatterns;
 
 public class Singleton {
 
-    private static String obj = null;
+    private static volatile String obj = null;
 
     private Singleton() {}
 
